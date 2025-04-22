@@ -8,30 +8,42 @@ public class SMark extends Applet implements ActionListener
     Button b; 
     Label l1, l2, l3, l4; 
     double percentage = 0.0;  
- 
+
     public void init()  
     { 
-        l1 = new Label("Mark1:");     t1 = new TextField(5); 
-        l2 = new Label("Mark2:");     t2 = new TextField(5); 
-        l3 = new Label("Mark3:");     t3 = new TextField(5); 
- 
-        l4 = new Label("Percentage:"); t4 = new TextField(5); 
+        l1 = new Label("Mark1:");     
+        t1 = new TextField(5); 
+        l2 = new Label("Mark2:");     
+        t2 = new TextField(5); 
+        l3 = new Label("Mark3:");     
+        t3 = new TextField(5); 
+        l4 = new Label("Percentage:"); 
+        t4 = new TextField(5); 
         t4.setEditable(false); 
- 
         b = new Button("Calculate"); 
         b.addActionListener(this); 
- 
+
         setLayout(null); 
-        l1.setBounds(50, 40, 100, 20);              add(l1);  
-        t1.setBounds(150, 40, 100, 20);    add(t1); 
-        l2.setBounds(50, 80, 100, 20);              add(l2); 
-        t2.setBounds(150, 80, 100, 20);    add(t2); 
-        l3.setBounds(50, 120, 100, 20);            add(l3); 
-        t3.setBounds(150, 120, 100, 20);          add(t3); 
-        l4.setBounds(50, 160, 100, 20);            add(l4); 
-        t4.setBounds(150, 160, 100, 20);          add(t4); 
-        b.setBounds(100, 200, 80, 30);             add(b);    
+        l1.setBounds(50, 40, 100, 20);              
+        add(l1);  
+        t1.setBounds(150, 40, 100, 20);    
+        add(t1); 
+        l2.setBounds(50, 80, 100, 20);              
+        add(l2); 
+        t2.setBounds(150, 80, 100, 20);    
+        add(t2); 
+        l3.setBounds(50, 120, 100, 20);            
+        add(l3); 
+        t3.setBounds(150, 120, 100, 20);          
+        add(t3); 
+        l4.setBounds(50, 160, 100, 20);            
+        add(l4); 
+        t4.setBounds(150, 160, 100, 20);          
+        add(t4); 
+        b.setBounds(100, 200, 80, 30);             
+        add(b);    
     } 
+
     public void actionPerformed(ActionEvent e)  
     { 
         try  
@@ -42,14 +54,13 @@ public class SMark extends Applet implements ActionListener
             percentage = ((x + y + z)*100 / 300);   
             t4.setText(String.format("%.2f", percentage)); 
             repaint();                   
-         }  
- 
- 
+        }  
         catch (NumberFormatException ex)  
         { 
             t4.setText("Error"); 
         } 
     } 
+
     @Override 
     public void paint(Graphics g)  
     { 
@@ -68,4 +79,4 @@ public class SMark extends Applet implements ActionListener
             g.drawArc(175, 310, 50, 20, 0, 180);  
         } 
     } 
-} 
+}  
